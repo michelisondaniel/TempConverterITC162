@@ -11,16 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginStart="23dp"
         android:text="@string/degreesTitle"
         android:textSize="18sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/inputFarenheit"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toStartOf="@+id/inputFarenheit" />
 
     <TextView
         android:id="@+id/textFarenheit"
@@ -30,39 +26,43 @@
         android:text="@string/textFarenheit"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/inputFarenheit"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textCelcius"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="27dp"
         android:text="@string/textCelsius"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintBaseline_toBaselineOf="@+id/displayCelsius"
-        app:layout_constraintStart_toStartOf="@+id/textFarenheit" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textFarenheit" />
 
     <EditText
         android:id="@+id/inputFarenheit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="47dp"
+        android:layout_marginStart="48dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/inputFahrenheit"
+        android:hint="@string/inputFahrenheit"
         android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/textCelcius"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textFarenheit"
-        tools:layout_editor_absoluteY="110dp" />
+        app:layout_constraintStart_toEndOf="@+id/textFarenheit" />
 
     <TextView
         android:id="@+id/displayCelsius"
         android:layout_width="186dp"
         android:layout_height="35dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginEnd="74dp"
+        android:layout_marginStart="76dp"
         android:layout_marginTop="16dp"
         android:text="@string/celsiusDisplay"
         android:textSize="18sp"

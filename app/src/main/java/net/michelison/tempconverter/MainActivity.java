@@ -3,6 +3,7 @@ package net.michelison.tempconverter;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -17,6 +18,8 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
     private String temperature;
     private SharedPreferences savedValues;
 
+    private static final String TAG = "TempConverter";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
 
         inputFahrenheit.setOnEditorActionListener(this);
         savedValues = getSharedPreferences("SavedValues", MODE_PRIVATE);
+
+        Log.d(TAG, "onCreate method");
     }
 
     @Override
@@ -39,15 +44,18 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
 
         super.onPause();
 
+        Log.d(TAG, "onPause method");
     }
 
     @Override
     public void onResume(){
         super.onResume();
         // restore the values
-        temperature = savedValues.getString("temperature", "");
+        temperature = savedValues.getString("temperature", "0");
         inputFahrenheit.setText(temperature);
         calculateAndDisplay();
+
+        Log.d(TAG, "onResume method");
     }
 
     @Override
@@ -74,6 +82,7 @@ public class MainActivity extends AppCompatActivity implements EditText.OnEditor
 
         displayCelsius.setText(celsius.format(celsiusTemp));
 
+        Log.d(TAG, "calculateAndDisplay method");
 
     }
 }
